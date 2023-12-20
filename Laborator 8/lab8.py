@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error
 # %%
 # Pasul 1: Generare trend
 def generate_trend(t):
-    return 0.5 * t**2 / 1000
+    return 0.5 * t**2
 
 # Pasul 2: Generare sezon
 def generate_season(t):
