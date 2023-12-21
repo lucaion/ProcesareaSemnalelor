@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error
 # %%
 # Pasul 1: Generare trend
 def generate_trend(t):
-    return 0.5 * t**2
+    return 0.5 * t**2 / 1000
 
 # Pasul 2: Generare sezon
 def generate_season(t):
@@ -45,7 +45,7 @@ ax[2].plot(generate_season(np.arange(N)))
 ax[3].set_title("Zgomot")
 ax[3].plot(generate_noise(np.arange(N), sigma=2))
 plt.subplots_adjust(hspace=1)
-plt.show()
+# plt.show()
 
 # %%
 # b) Calcul autocorelație folosind NumPy
@@ -57,7 +57,7 @@ plt.stem(lags, autocorrelation, basefmt='b', markerfmt='bo', label='Autocorelaț
 plt.xlabel('Lag')
 plt.ylabel('Autocorelație')
 plt.title('Vectorul de autocorelație')
-plt.show()
+# plt.show()
 
 # %%
 # c) Fit AR model and display predictions
@@ -70,7 +70,7 @@ plt.plot(t, time_series, label='Original Time Series')
 plt.plot(t[p:], predictions, label='AR Predictions')
 plt.legend()
 plt.title(f'AR Model (p={p}) and Predictions')
-plt.show()
+# plt.show()
 
 # %%
 train_size = 800
@@ -115,6 +115,6 @@ plt.plot(t, time_series, label='Seria de timp originală')
 plt.plot(t[train_size:], final_predictions, label=f'Predicții AR (p={best_order}, m={best_horizon})')
 plt.legend()
 plt.title(f'Model AR și predicții cu valorile optime')
-plt.show()
+# plt.show()
 
 
